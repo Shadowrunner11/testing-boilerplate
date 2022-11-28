@@ -28,9 +28,6 @@ describe('endpoints', () => {
       .send({body: taskInsert})
       .expect('Content-Type', /json/)
       .expect(200)
-      .expect(({body})=>{
-        body.title = taskInsert.title
-      })
       .then(({body}) => {_id = body._id; done()})
       
   })
@@ -40,9 +37,7 @@ describe('endpoints', () => {
       .send({body: taskUpdate})
       .expect('Content-Type', /json/)
       .expect(200)
-      .expect(({body})=>{
-        body.status = taskUpdate.status
-      })
+      
   })
   it('list all', function (done) {
     appTest
@@ -57,8 +52,5 @@ describe('endpoints', () => {
       .send({body: {_id}})
       .expect('Content-Type', /json/)
       .expect(200)
-      .expect(({body})=>{
-        body.status = 'Deleted'
-      })
   })
 })
