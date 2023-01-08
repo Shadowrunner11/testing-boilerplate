@@ -3,7 +3,7 @@ import { GlobalStatus } from '../types/globals';
 
 export enum TaskStatus {
   PENDING = 'Pending',
-  DELETED = GlobalStatus.DELETED,
+  DELETED = 'Deleted',
   DONE = 'Done',
   CLOSED = 'Closed'
 }

@@ -4,7 +4,7 @@ import { ITask, TaskStatus } from '../../../types/task';
 
 export const TaskSchema = new Schema<ITask>({
   description: { type: String },
-  title: { type:String },
+  title: { type: String },
   state: { 
     type: String,
     'enum': Object.values(TaskStatus), 

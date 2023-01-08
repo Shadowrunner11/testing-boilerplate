@@ -9,6 +9,9 @@
   "scripts": {
     "dev": "nodemon --exec node -r @swc/register src/index.ts",
     "test": "nyc --reporter=text mocha test/**/*.test.ts -r @swc/register -extension ts",
+    "unittest": "nyc --reporter=text mocha test/unit/*.test.ts -r @swc/register -extension ts",
+    "intengration": "nyc --reporter=text mocha test/integration/*.test.ts -r @swc/register -extension ts",
+    "endToEnd": "nyc --reporter=text mocha test/e2e/*.test.ts -r @swc/register -extension ts",
     "build": "swc src --out-dir dist"
   },
   "devDependencies": {
@@ -37,6 +40,8 @@
   },
   "dependencies": {
     "@swc/cli": "^0.1.57",
+    "commander": "^9.4.1",
+    "conf": "^10.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

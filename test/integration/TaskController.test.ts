@@ -49,4 +49,10 @@ describe('Task Controller tests', ()=>{
     expect(state).to.be.equal(TaskStatus.DELETED)
   })
 
+  it('Get tasks by status', async function(){
+    const tasks = await taskController.getbyStatus(TaskStatus.DELETED)
+    tasks.forEach( task => expect(task.state)
+      .to.be.equal(TaskStatus.DELETED)
+    )
+  })
 })
